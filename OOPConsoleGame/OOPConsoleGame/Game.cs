@@ -20,6 +20,7 @@ namespace OOPConsoleGame
             sceneDic = new Dictionary<string, BaseScene>();
             sceneDic.Add("Title", new TitleScene());
             sceneDic.Add("Intro", new IntroScene());
+            sceneDic.Add("Town", new TownScene());
 
             curScene = sceneDic["Title"];
         }
