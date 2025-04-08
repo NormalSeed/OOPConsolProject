@@ -8,5 +8,17 @@ namespace OOPConsoleGame
 {
     internal class Game
     {
+        public static void Start()
+        {
+
+        }
+        public static void Run()
+        {
+
+        }
+        public static void End()
+        {
+
+        }
     }
 }
