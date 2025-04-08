@@ -37,7 +37,7 @@ namespace OOPConsoleGame.Scenes
 
         public override void Result()
         {
-
+            townMap.ObjInteract();
         }
     }
 }

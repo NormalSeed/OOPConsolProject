@@ -73,5 +73,17 @@ namespace OOPConsoleGame.Maps
                 go.Print();
             }
         }
+
+        public void ObjInteract()
+        {
+            foreach(GameObject go in gameObjects)
+            {
+                if (Game.Player.position.x == go.position.x &&
+                    Game.Player.position.y == go.position.y)
+                {
+                    go.Interact(Game.Player);
+                }
+            }
+        }
     }
 }

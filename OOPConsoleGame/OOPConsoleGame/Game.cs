@@ -32,6 +32,7 @@ namespace OOPConsoleGame
             sceneDic.Add("Title", new TitleScene());
             sceneDic.Add("Intro", new IntroScene());
             sceneDic.Add("Town", new TownScene());
+            sceneDic.Add("ElderHouse", new ElderHouseScene());
 
             curScene = sceneDic["Title"];
 
