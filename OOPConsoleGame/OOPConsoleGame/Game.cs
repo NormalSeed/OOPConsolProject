@@ -19,6 +19,9 @@ namespace OOPConsoleGame
             gameOver = false;
             sceneDic = new Dictionary<string, BaseScene>();
             sceneDic.Add("Title", new TitleScene());
+            sceneDic.Add("Test01", new Test01());
+            sceneDic.Add("Test02", new Test02());
+            sceneDic.Add("Test03", new Test03());
 
             curScene = sceneDic["Title"];
         }
@@ -38,6 +41,11 @@ namespace OOPConsoleGame
         public static void End()
         {
 
+        }
+
+        public static void ChangeScene(string sceneName)
+        {
+            curScene = sceneDic[sceneName];
         }
     }
 }

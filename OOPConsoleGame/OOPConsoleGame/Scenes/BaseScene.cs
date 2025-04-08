@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleGame.Scenes
 {
-    public abstract class TNBScene
+    public abstract class BaseScene
     {
         protected ConsoleKey input;
         public abstract void Render();
