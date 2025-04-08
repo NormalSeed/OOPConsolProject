@@ -10,19 +10,32 @@ namespace OOPConsoleGame
 {
     internal class Game
     {
+        //게임 정보
+
         private static bool gameOver;
 
         private static Dictionary<string, BaseScene> sceneDic;
         private static BaseScene curScene;
+        private static Player player;
+
+        public static Player Player { get { return player; } }
+
+
         public static void Start()
         {
+            //게임 시작 설정
             gameOver = false;
+
+            //씬 설정
             sceneDic = new Dictionary<string, BaseScene>();
             sceneDic.Add("Title", new TitleScene());
             sceneDic.Add("Intro", new IntroScene());
             sceneDic.Add("Town", new TownScene());
 
             curScene = sceneDic["Title"];
+
+            //플레이어 설정
+            player = new Player();
         }
         public static void Run()
         {

@@ -34,6 +34,7 @@ namespace OOPConsoleGame.Maps
                     map[y, x] = mapData[y][x] == ' ' ? true : false;
                 }
             }
+            Game.Player.position = new Position(1, 1);
         }
         public void PrintMap()
         {
