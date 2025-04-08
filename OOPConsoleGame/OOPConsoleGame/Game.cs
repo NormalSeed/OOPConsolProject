@@ -23,6 +23,7 @@ namespace OOPConsoleGame
 
         public static void Start()
         {
+            Console.CursorVisible = false;
             //게임 시작 설정
             gameOver = false;
 
