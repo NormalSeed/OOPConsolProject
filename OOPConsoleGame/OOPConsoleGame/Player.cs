@@ -52,5 +52,10 @@ namespace OOPConsoleGame
                 position = targetPos;
             }
         }
+
+        public void OpneInven()
+        {
+
+        }
     }
 }

@@ -8,7 +8,7 @@ using OOPConsoleGame.Scenes;
 
 namespace OOPConsoleGame
 {
-    internal class Game
+    public class Game
     {
         //게임 정보
 
@@ -34,6 +34,7 @@ namespace OOPConsoleGame
             sceneDic.Add("Town", new TownScene());
             sceneDic.Add("ElderHouse", new ElderHouseScene());
             sceneDic.Add("Smithery", new SmitheryScene());
+            sceneDic.Add("RianHouse", new RianHouseScene());
 
             curScene = sceneDic["Title"];
 

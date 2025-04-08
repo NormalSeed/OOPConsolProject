@@ -16,9 +16,5 @@ namespace OOPConsoleGame.Scenes
         }
         public abstract void Update();
         public abstract void Result();
-        public void OpenInven()
-        {
-
-        }
     }
 }
