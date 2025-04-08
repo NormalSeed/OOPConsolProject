@@ -33,6 +33,12 @@ namespace OOPConsoleGame.Scenes
         public override void Update()
         {
             Game.Player.Move(input);
+            switch(input)
+            {
+                case ConsoleKey.I:
+                    Game.ChangeScene("Inventory");
+                    break;
+            }
         }
 
         public override void Result()

@@ -35,11 +35,19 @@ namespace OOPConsoleGame
             sceneDic.Add("ElderHouse", new ElderHouseScene());
             sceneDic.Add("Smithery", new SmitheryScene());
             sceneDic.Add("RianHouse", new RianHouseScene());
+            sceneDic.Add("Inventory", new InventoryScene());
 
             curScene = sceneDic["Title"];
 
             //플레이어 설정
             player = new Player();
+            player.level = 1;
+            player.hp = 10;
+            player.atk = 5;
+            player.def = 5;
+            player.spd = 5;
+            player.inventory = new List<Item>();
+            player.inventory.Add(new Item("Gold", 300));
         }
         public static void Run()
         {

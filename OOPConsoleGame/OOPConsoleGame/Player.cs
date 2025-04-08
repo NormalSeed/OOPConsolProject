@@ -8,12 +8,14 @@ namespace OOPConsoleGame
 {
     public class Player
     {
-        private int level;
-        private int atk;
-        private int def;
-        private int spd;
+        public int level;
+        public int hp;
+        public int atk;
+        public int def;
+        public int spd;
         public Position position;
         public bool[,] map;
+        public List<Item> inventory;
 
         public void SetPosition(int x, int y)
         {
@@ -51,11 +53,6 @@ namespace OOPConsoleGame
             {
                 position = targetPos;
             }
-        }
-
-        public void OpneInven()
-        {
-
         }
     }
 }
