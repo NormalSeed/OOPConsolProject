@@ -44,7 +44,6 @@ namespace OOPConsoleGame
 
             while (gameOver == false)
             {
-                Console.Clear();
                 curScene.Render();
                 curScene.Input();
                 curScene.Update();
@@ -59,6 +58,7 @@ namespace OOPConsoleGame
         public static void ChangeScene(string sceneName)
         {
             curScene = sceneDic[sceneName];
+            Console.Clear();
         }
     }
 }

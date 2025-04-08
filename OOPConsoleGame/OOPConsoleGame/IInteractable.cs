@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOPConsoleGame.Maps
+namespace OOPConsoleGame
 {
-    public interface IMap
+    public interface IInteractable
     {
-        void CreateMap();
-        void PrintMap();
-        void SetObject();
+        public void Interact(Player player)
+        {
+
+        }
     }
 }

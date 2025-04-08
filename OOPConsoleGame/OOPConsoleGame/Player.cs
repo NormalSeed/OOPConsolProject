@@ -13,6 +13,7 @@ namespace OOPConsoleGame
         private int def;
         private int spd;
         public Position position;
+        public bool[,] map;
 
         public void SetPosition(int x, int y)
         {
@@ -29,20 +30,26 @@ namespace OOPConsoleGame
 
         public void Move(ConsoleKey input)
         {
+            Position targetPos = position;
             switch(input)
             {
                 case ConsoleKey.W:
-                    position.y--;
-                    break;
+                    targetPos.y--;
+                        break;
                 case ConsoleKey.S:
-                    position.y++;
+                    targetPos.y++;
                     break;
                 case ConsoleKey.A:
-                    position.x--;
+                    targetPos.x--;
                     break;
                 case ConsoleKey.D:
-                    position.x++;
+                    targetPos.x++;
                     break;
+            }
+
+            if (map[targetPos.y, targetPos.x] == true)
+            {
+                position = targetPos;
             }
         }
     }

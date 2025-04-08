@@ -12,6 +12,7 @@ namespace OOPConsoleGame.Scenes
         private TownMap townMap;
         private bool isInit = true;
 
+
         public override void Render()
         {
             if (isInit)
@@ -25,6 +26,7 @@ namespace OOPConsoleGame.Scenes
             Console.WriteLine("눈앞에 펼쳐진 마을 광장은 여느때처럼 한산합니다.");
             Console.WriteLine();
 
+            townMap.SetObject();
             Game.Player.Print();
         }
 
