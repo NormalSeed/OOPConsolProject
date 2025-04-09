@@ -54,6 +54,7 @@ namespace OOPConsoleGame
 
             equipableDic = new Dictionary<string, IEquipable>();
             equipableDic.Add("단단한 철검", new Weapon("단단한 철검", 3, "Weapon"));
+            equipableDic.Add("철검", new Weapon("철검", 2, "Weapon"));
 
             uiStack = new Stack<string>();
             uiStack.Push("Title");
@@ -71,9 +72,9 @@ namespace OOPConsoleGame
             player.inventory.Add(new Item("Gold", 300));
             player.inventory.Add(new Item("하급 포션", 5));
             player.equipments = new Dictionary<string, IEquipable>();
-            player.equipments.Add("Weapon", new Weapon("빈 슬롯", 0, "Weapon"));
-            player.equipments.Add("Armor", new Armor("빈 슬롯", 0, "Armor"));
-            player.equipments.Add("Boots", new Boots("빈 슬롯", 0, "Boots"));
+            player.equipments.Add("Weapon", null);
+            player.equipments.Add("Armor", null);
+            player.equipments.Add("Boots", null);
             player.eInventory = new List<Item>();
         }
         public static void Run()

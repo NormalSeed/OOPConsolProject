@@ -11,14 +11,12 @@ namespace OOPConsoleGame.Items
         public string Name { get; set; }
         public int Def { get; set; }
         public string type { get; set; }
-        public bool IsEquipped { get; set; }
 
         public Armor(string name, int def, string type, bool isEquipped = false)
         {
             Name = name;
             Def = def;
             this.type = type;
-            IsEquipped = isEquipped;
         }
 
         public void Equip()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OOPConsoleGame.Items;
 
 namespace OOPConsoleGame.Scenes
 {
@@ -22,7 +23,12 @@ namespace OOPConsoleGame.Scenes
 
         public override void Update()
         {
-
+            switch (input)
+            {
+                case ConsoleKey.D2:
+                    Game.Player.eInventory.Add(new Item("철검", 1));
+                    break;
+            }
         }
 
         public override void Result()
@@ -40,7 +46,6 @@ namespace OOPConsoleGame.Scenes
                             Game.ChangeScene("SmithTrade");
                             break;
                     }    
-                    // TODO : 거래씬으로 이동
                     break;
                 case ConsoleKey.D2:
                     Console.WriteLine("설명을 끝낸 당신은 대장간의 자신의 자리로 걸어갑니다.");

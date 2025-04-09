@@ -10,7 +10,6 @@ namespace OOPConsoleGame.Items
     {
         string Name { get; set; }
         string type { get; set; }
-        bool IsEquipped { get; set; }
         public void Equip();
         public void Unequip();
     }

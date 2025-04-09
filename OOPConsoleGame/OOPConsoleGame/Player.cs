@@ -83,14 +83,18 @@ namespace OOPConsoleGame
 
         public void EquipItem(string slot, IEquipable item)
         {
+            if (equipments[slot] != null)
+            {
+                UnequipItem(slot);
+            }
+
             equipments[slot] = item;
             int index = eInventory.FindIndex(i => i.Name == item.Name);
             eInventory[index].Quantity -= 1;
             if (eInventory[index].Quantity < 1)
             {
                 eInventory.RemoveAt(index);
-            }    
-            item.IsEquipped = true;
+            }
             item.Equip();
         }
 
@@ -101,19 +105,7 @@ namespace OOPConsoleGame
             {
                 IEquipable item = equipments[slot];
                 item.Unequip();
-                equipments.Remove(slot);
-                if (slot == "Weapon")
-                {
-                    equipments.Add(slot, new Weapon("빈 슬롯", 0, "Weapon"));
-                }
-                else if (slot == "Armor")
-                {
-                    equipments.Add(slot, new Armor("빈 슬롯", 0, "Armor"));
-                }
-                else if (slot == "Boots")
-                {
-                    equipments.Add(slot, new Boots("빈 슬롯", 0, "Boots"));
-                }
+                equipments[slot] = null;
             }
         }
     }
