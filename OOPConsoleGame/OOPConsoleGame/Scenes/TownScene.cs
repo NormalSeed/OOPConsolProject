@@ -47,6 +47,9 @@ namespace OOPConsoleGame.Scenes
                 case ConsoleKey.E:
                     Game.OverlapScene("EInventory");
                     break;
+                case ConsoleKey.P:
+                    Game.OverlapScene("Status");
+                    break;
             }
         }
     }

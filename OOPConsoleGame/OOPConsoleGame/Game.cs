@@ -47,6 +47,7 @@ namespace OOPConsoleGame
             sceneDic.Add("EquipStat", new EquipStatScene());
             sceneDic.Add("Equip", new EquipScene());
             sceneDic.Add("UnEquip", new UnequipScene());
+            sceneDic.Add("Status", new StatusScene());
 
             usableDic = new Dictionary<string, IUsable>();
             usableDic.Add("Low Potion", new Potion("하급 포션", 5));

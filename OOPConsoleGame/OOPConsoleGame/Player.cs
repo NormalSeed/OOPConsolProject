@@ -59,6 +59,14 @@ namespace OOPConsoleGame
             }
         }
 
+        public void ShowStatus()
+        {
+            Console.WriteLine($"Lvl    : {level}");
+            Console.WriteLine($"체력   : {curHp}/{maxHp}");
+            Console.WriteLine($"공격력 : {atk}");
+            Console.WriteLine($"방어력 : {def}");
+            Console.WriteLine($"속도   : {spd}");
+        }
         public void ShowEquipments()
         {
             foreach (var item in equipments)

@@ -23,6 +23,7 @@ namespace OOPConsoleGame.Scenes
             {
                 case ConsoleKey.D1:
                     Game.Player.eInventory.Add(new Item("단단한 철검", 1));
+                    Game.Player.inventory[0].Quantity -= 200;
                     Console.WriteLine("단단한 철검을 손에 넣었다!");
                     Console.WriteLine();
                     Util.Wait();
