@@ -9,7 +9,6 @@ namespace OOPConsoleGame.Items
     public interface IEquipable
     {
         string Name { get; set; }
-        int Atk { get; set; }
         string type { get; set; }
         bool IsEquipped { get; set; }
         public void Equip();

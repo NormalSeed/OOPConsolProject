@@ -6,28 +6,29 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleGame.Items
 {
-    public class Weapon : IEquipable
+    public class Armor : IEquipable
     {
         public string Name { get; set; }
-        public int Atk { get; set; }
+        public int Def { get; set; }
         public string type { get; set; }
         public bool IsEquipped { get; set; }
-        public Weapon(string name, int atk, string type, bool isEquipped = false)
+
+        public Armor(string name, int def, string type, bool isEquipped = false)
         {
             Name = name;
-            Atk = atk;
+            Def = def;
             this.type = type;
             IsEquipped = isEquipped;
         }
 
         public void Equip()
         {
-            Game.Player.atk += Atk;
+            Game.Player.def += Def;
         }
 
         public void Unequip()
         {
-            Game.Player.atk -= Atk;
+            Game.Player.def -= Def;
         }
     }
 }

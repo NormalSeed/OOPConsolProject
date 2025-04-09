@@ -46,7 +46,7 @@ namespace OOPConsoleGame
             sceneDic.Add("EInventory", new EInventoryScene());
             sceneDic.Add("EquipStat", new EquipStatScene());
             sceneDic.Add("Equip", new EquipScene());
-            sceneDic.Add("UnEquip", new UnequipScene());
+            sceneDic.Add("Unequip", new UnequipScene());
             sceneDic.Add("Status", new StatusScene());
 
             usableDic = new Dictionary<string, IUsable>();
@@ -61,17 +61,20 @@ namespace OOPConsoleGame
 
             //플레이어 설정
             player = new Player();
-            Player.level = 1;
-            Player.maxHp = 10;
-            Player.curHp = 10;
-            Player.atk = 5;
-            Player.def = 5;
-            Player.spd = 5;
-            Player.inventory = new List<Item>();
-            Player.inventory.Add(new Item("Gold", 300));
-            Player.inventory.Add(new Item("하급 포션", 5));
-            Player.equipments = new Dictionary<string, IEquipable>();
-            Player.eInventory = new List<Item>();
+            player.level = 1;
+            player.maxHp = 10;
+            player.curHp = 10;
+            player.atk = 5;
+            player.def = 5;
+            player.spd = 5;
+            player.inventory = new List<Item>();
+            player.inventory.Add(new Item("Gold", 300));
+            player.inventory.Add(new Item("하급 포션", 5));
+            player.equipments = new Dictionary<string, IEquipable>();
+            player.equipments.Add("Weapon", new Weapon("빈 슬롯", 0, "Weapon"));
+            player.equipments.Add("Armor", new Armor("빈 슬롯", 0, "Armor"));
+            player.equipments.Add("Boots", new Boots("빈 슬롯", 0, "Boots"));
+            player.eInventory = new List<Item>();
         }
         public static void Run()
         {

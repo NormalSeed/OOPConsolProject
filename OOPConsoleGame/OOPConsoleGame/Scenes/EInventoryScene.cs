@@ -53,19 +53,34 @@ namespace OOPConsoleGame.Scenes
                     }
                     break;
                 case ConsoleKey.D1:
-                    chosenItem = Game.equipableDic[Game.Player.eInventory[0 + (page - 1) * 5].Name];
+                    if (Game.Player.eInventory.Count > 0)
+                    { 
+                        chosenItem = Game.equipableDic[Game.Player.eInventory[0 + (page - 1) * 5].Name]; 
+                    }
                     break;
                 case ConsoleKey.D2:
-                    chosenItem = Game.equipableDic[Game.Player.eInventory[1 + (page - 1) * 5].Name];
-                    break;
+                    if (Game.Player.eInventory.Count > 1)
+                    {
+                        chosenItem = Game.equipableDic[Game.Player.eInventory[1 + (page - 1) * 5].Name];
+                    }
+                        break;
                 case ConsoleKey.D3:
-                    chosenItem = Game.equipableDic[Game.Player.eInventory[2 + (page - 1) * 5].Name];
+                    if (Game.Player.eInventory.Count > 2)
+                    {
+                        chosenItem = Game.equipableDic[Game.Player.eInventory[2 + (page - 1) * 5].Name];
+                    }
                     break;
                 case ConsoleKey.D4:
-                    chosenItem = Game.equipableDic[Game.Player.eInventory[3 + (page - 1) * 5].Name];
+                    if (Game.Player.eInventory.Count > 3)
+                    {
+                        chosenItem = Game.equipableDic[Game.Player.eInventory[3 + (page - 1) * 5].Name];
+                    }
                     break;
                 case ConsoleKey.D5:
-                    chosenItem = Game.equipableDic[Game.Player.eInventory[4 + (page - 1) * 5].Name];
+                    if (Game.Player.eInventory.Count > 4)
+                    {
+                        chosenItem = Game.equipableDic[Game.Player.eInventory[4 + (page - 1) * 5].Name];
+                    }
                     break;
             }
         }
@@ -81,19 +96,34 @@ namespace OOPConsoleGame.Scenes
                     Game.OverlapScene("EquipStat");
                     break;
                 case ConsoleKey.D1:
-                    Game.OverlapScene("Equip");
+                    if (Game.Player.eInventory.Count > 0)
+                    {
+                        Game.OverlapScene("Equip");
+                    }
                     break;
                 case ConsoleKey.D2:
-                    Game.OverlapScene("Equip");
+                    if (Game.Player.eInventory.Count > 0)
+                    {
+                        Game.OverlapScene("Equip");
+                    }
                     break;
                 case ConsoleKey.D3:
-                    Game.OverlapScene("Equip");
+                    if (Game.Player.eInventory.Count > 0)
+                    {
+                        Game.OverlapScene("Equip");
+                    }
                     break;
                 case ConsoleKey.D4:
-                    Game.OverlapScene("Equip");
+                    if (Game.Player.eInventory.Count > 0)
+                    {
+                        Game.OverlapScene("Equip");
+                    }
                     break;
                 case ConsoleKey.D5:
-                    Game.OverlapScene("Equip");
+                    if (Game.Player.eInventory.Count > 0)
+                    {
+                        Game.OverlapScene("Equip");
+                    }
                     break;
             }
         }

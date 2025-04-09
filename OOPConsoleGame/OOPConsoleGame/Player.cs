@@ -69,10 +69,15 @@ namespace OOPConsoleGame
         }
         public void ShowEquipments()
         {
-            foreach (var item in equipments)
+            Console.WriteLine("착용 장비");
+            string[] slotType = { "Weapon", "Armor", "Boots" };
+
+            for ( int i = 0; i < 3; i++)
             {
-                Console.WriteLine("착용 장비");
-                Console.WriteLine($"{item.Key} : {item.Value.Name}");
+                if (equipments[slotType[i]] != null)
+                {
+                    Console.WriteLine($"{slotType[i]} : {equipments[slotType[i]].Name}");
+                }
             }
         }
 
@@ -87,6 +92,29 @@ namespace OOPConsoleGame
             }    
             item.IsEquipped = true;
             item.Equip();
+        }
+
+        public void UnequipItem(string slot)
+        {
+            eInventory.Add(new Item(equipments[slot].Name, 1));
+            if (equipments.ContainsKey(slot))
+            {
+                IEquipable item = equipments[slot];
+                item.Unequip();
+                equipments.Remove(slot);
+                if (slot == "Weapon")
+                {
+                    equipments.Add(slot, new Weapon("빈 슬롯", 0, "Weapon"));
+                }
+                else if (slot == "Armor")
+                {
+                    equipments.Add(slot, new Armor("빈 슬롯", 0, "Armor"));
+                }
+                else if (slot == "Boots")
+                {
+                    equipments.Add(slot, new Boots("빈 슬롯", 0, "Boots"));
+                }
+            }
         }
     }
 }

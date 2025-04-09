@@ -14,7 +14,7 @@ namespace OOPConsoleGame.Scenes
             Console.WriteLine("카르타의 장비를 구매하시겠습니까?");
             Console.WriteLine();
             Console.WriteLine("1. 예");
-            Console.WriteLine("2. 아니오.");
+            Console.WriteLine("2. 아니오");
         }
 
         public override void Update()
