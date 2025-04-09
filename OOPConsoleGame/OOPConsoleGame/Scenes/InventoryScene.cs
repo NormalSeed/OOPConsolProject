@@ -96,6 +96,9 @@ namespace OOPConsoleGame.Scenes
                 case ConsoleKey.Escape:
                     Game.PreviousScene();
                     break;
+                case ConsoleKey.D1:
+                    Game.OverlapScene("Use");
+                    break;
 
             }
         }

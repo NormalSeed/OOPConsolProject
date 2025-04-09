@@ -43,6 +43,7 @@ namespace OOPConsoleGame
             sceneDic.Add("SmithTrade", new SmithTradeScene());
             sceneDic.Add("RianHouse", new RianHouseScene());
             sceneDic.Add("Inventory", new InventoryScene());
+            sceneDic.Add("Use", new UseScene());
             sceneDic.Add("EInventory", new EInventoryScene());
             sceneDic.Add("EquipStat", new EquipStatScene());
             sceneDic.Add("Equip", new EquipScene());
@@ -50,7 +51,7 @@ namespace OOPConsoleGame
             sceneDic.Add("Status", new StatusScene());
 
             usableDic = new Dictionary<string, IUsable>();
-            usableDic.Add("Low Potion", new Potion("하급 포션", 5));
+            usableDic.Add("하급 포션", new Potion("하급 포션", 5));
 
             equipableDic = new Dictionary<string, IEquipable>();
             equipableDic.Add("단단한 철검", new Weapon("단단한 철검", 3, "Weapon"));
