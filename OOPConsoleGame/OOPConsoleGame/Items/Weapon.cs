@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleGame.Items
 {
-    public class Sword : IEquipable
+    public class Weapon : IEquipable
     {
-        string Name { get; set; }
-        int Atk { get; set; }
-        string type { get; set; }
-        bool IsEquipped { get; set; }
-        public Sword(string name, int atk, string type, bool isEquipped = false)
+        public string Name { get; set; }
+        public int Atk { get; set; }
+        public string type { get; set; }
+        public bool IsEquipped { get; set; }
+        public Weapon(string name, int atk, string type, bool isEquipped = false)
         {
             Name = name;
             Atk = atk;
@@ -22,9 +22,7 @@ namespace OOPConsoleGame.Items
 
         public void Equip()
         {
-            Game.OverlapScene("Equip");
-            //Game.Player.equipments.Add(Name, this);
-            //Game.Player.atk += Atk;
+            Game.Player.atk += Atk;
         }
 
         public void Unequip()

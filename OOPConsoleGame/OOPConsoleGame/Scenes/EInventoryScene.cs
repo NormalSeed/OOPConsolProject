@@ -10,20 +10,20 @@ namespace OOPConsoleGame.Scenes
     public class EInventoryScene : BaseScene
     {
         private int page = 1;
-        public static Item chosenItem;
+        public static IEquipable chosenItem;
         public override void Render()
         {
             Console.Clear();
 
-            if (Game.Player.Einventory.Count >= 1)
+            if (Game.Player.eInventory.Count >= 1)
             {
-                for (int i = 0; i < Game.Player.Einventory.Count; i++)
+                for (int i = 0; i < Game.Player.eInventory.Count; i++)
                 {
                     int index = i % 5;
-                    if (Game.Player.Einventory[i] != null)
+                    if (Game.Player.eInventory[i] != null)
                     {
-                        Console.WriteLine($"{index + 1}. {Game.Player.Einventory[index + (page - 1) * 5].Name} " +
-                            $": {Game.Player.Einventory[index + (page - 1) * 5].Quantity}개");
+                        Console.WriteLine($"{index + 1}. {Game.Player.eInventory[index + (page - 1) * 5].Name} " +
+                            $": {Game.Player.eInventory[index + (page - 1) * 5].Quantity}개");
                     }
                     else
                     {
@@ -33,7 +33,7 @@ namespace OOPConsoleGame.Scenes
             }
             Console.SetCursorPosition(0, 5);
             Console.WriteLine($"{page} 페이지");
-            Console.WriteLine("[결정] : 번호    [뒤로가기] : ESC");
+            Console.WriteLine("[결정] : 번호    [뒤로가기] : ESC    [현재 장비] : C");
         }
 
         public override void Update()
@@ -41,7 +41,7 @@ namespace OOPConsoleGame.Scenes
             switch (input)
             {
                 case ConsoleKey.RightArrow:
-                    if (Game.Player.Einventory.Count > page * 5)
+                    if (Game.Player.eInventory.Count > page * 5)
                     {
                         page += 1;
                     }
@@ -53,19 +53,19 @@ namespace OOPConsoleGame.Scenes
                     }
                     break;
                 case ConsoleKey.D1:
-                    chosenItem = Game.Player.Einventory[1 + (page - 1) * 5];
+                    chosenItem = Game.equipableDic[Game.Player.eInventory[0 + (page - 1) * 5].Name];
                     break;
                 case ConsoleKey.D2:
-
+                    chosenItem = Game.equipableDic[Game.Player.eInventory[1 + (page - 1) * 5].Name];
                     break;
                 case ConsoleKey.D3:
-
+                    chosenItem = Game.equipableDic[Game.Player.eInventory[2 + (page - 1) * 5].Name];
                     break;
                 case ConsoleKey.D4:
-
+                    chosenItem = Game.equipableDic[Game.Player.eInventory[3 + (page - 1) * 5].Name];
                     break;
                 case ConsoleKey.D5:
-
+                    chosenItem = Game.equipableDic[Game.Player.eInventory[4 + (page - 1) * 5].Name];
                     break;
             }
         }
@@ -76,6 +76,24 @@ namespace OOPConsoleGame.Scenes
             {
                 case ConsoleKey.Escape:
                     Game.PreviousScene();
+                    break;
+                case ConsoleKey.C:
+                    Game.OverlapScene("EquipStat");
+                    break;
+                case ConsoleKey.D1:
+                    Game.OverlapScene("Equip");
+                    break;
+                case ConsoleKey.D2:
+                    Game.OverlapScene("Equip");
+                    break;
+                case ConsoleKey.D3:
+                    Game.OverlapScene("Equip");
+                    break;
+                case ConsoleKey.D4:
+                    Game.OverlapScene("Equip");
+                    break;
+                case ConsoleKey.D5:
+                    Game.OverlapScene("Equip");
                     break;
             }
         }

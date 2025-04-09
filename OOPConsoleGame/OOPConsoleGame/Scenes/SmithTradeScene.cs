@@ -22,7 +22,7 @@ namespace OOPConsoleGame.Scenes
             switch (input)
             {
                 case ConsoleKey.D1:
-                    Game.Player.Einventory.Add(new Item("단단한 철검", 1));
+                    Game.Player.eInventory.Add(new Item("단단한 철검", 1));
                     Console.WriteLine("단단한 철검을 손에 넣었다!");
                     Console.WriteLine();
                     Util.Wait();

@@ -19,8 +19,8 @@ namespace OOPConsoleGame
         private static Dictionary<string, BaseScene> sceneDic;
         private static BaseScene curScene;
 
-        private static Dictionary<string, IUsable> usableDic;
-        private static Dictionary<string, IEquipable> equipableDic;
+        public static Dictionary<string, IUsable> usableDic;
+        public static Dictionary<string, IEquipable> equipableDic;
 
         private static Player player;
 
@@ -44,12 +44,15 @@ namespace OOPConsoleGame
             sceneDic.Add("RianHouse", new RianHouseScene());
             sceneDic.Add("Inventory", new InventoryScene());
             sceneDic.Add("EInventory", new EInventoryScene());
+            sceneDic.Add("EquipStat", new EquipStatScene());
             sceneDic.Add("Equip", new EquipScene());
+            sceneDic.Add("UnEquip", new UnequipScene());
 
             usableDic = new Dictionary<string, IUsable>();
             usableDic.Add("Low Potion", new Potion("하급 포션", 5));
 
             equipableDic = new Dictionary<string, IEquipable>();
+            equipableDic.Add("단단한 철검", new Weapon("단단한 철검", 3, "Weapon"));
 
             uiStack = new Stack<string>();
             uiStack.Push("Title");
@@ -67,7 +70,7 @@ namespace OOPConsoleGame
             Player.inventory.Add(new Item("Gold", 300));
             Player.inventory.Add(new Item("하급 포션", 5));
             Player.equipments = new Dictionary<string, IEquipable>();
-            Player.Einventory = new List<Item>();
+            Player.eInventory = new List<Item>();
         }
         public static void Run()
         {

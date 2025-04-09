@@ -19,7 +19,7 @@ namespace OOPConsoleGame
         public bool[,] map;
         public List<Item> inventory;
         public Dictionary<string, IEquipable> equipments;
-        public List<Item> Einventory;
+        public List<Item> eInventory;
 
         public void SetPosition(int x, int y)
         {
@@ -57,6 +57,28 @@ namespace OOPConsoleGame
             {
                 position = targetPos;
             }
+        }
+
+        public void ShowEquipments()
+        {
+            foreach (var item in equipments)
+            {
+                Console.WriteLine("착용 장비");
+                Console.WriteLine($"{item.Key} : {item.Value.Name}");
+            }
+        }
+
+        public void EquipItem(string slot, IEquipable item)
+        {
+            equipments[slot] = item;
+            int index = eInventory.FindIndex(i => i.Name == item.Name);
+            eInventory[index].Quantity -= 1;
+            if (eInventory[index].Quantity < 1)
+            {
+                eInventory.RemoveAt(index);
+            }    
+            item.IsEquipped = true;
+            item.Equip();
         }
     }
 }
