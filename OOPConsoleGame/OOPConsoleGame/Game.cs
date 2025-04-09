@@ -14,6 +14,7 @@ namespace OOPConsoleGame
 
         private static bool gameOver;
 
+        private static Stack<string> uiStack = new Stack<string>();
         private static Dictionary<string, BaseScene> sceneDic;
         private static BaseScene curScene;
         private static Player player;
@@ -37,7 +38,9 @@ namespace OOPConsoleGame
             sceneDic.Add("RianHouse", new RianHouseScene());
             sceneDic.Add("Inventory", new InventoryScene());
 
-            curScene = sceneDic["Title"];
+            uiStack = new Stack<string>();
+            uiStack.Push("Title");
+            curScene = sceneDic[uiStack.Peek()];
 
             //플레이어 설정
             player = new Player();
@@ -68,7 +71,9 @@ namespace OOPConsoleGame
 
         public static void ChangeScene(string sceneName)
         {
-            curScene = sceneDic[sceneName];
+            uiStack.Pop();
+            uiStack.Push(sceneName);
+            curScene = sceneDic[uiStack.Peek()];
             Console.Clear();
         }
     }
