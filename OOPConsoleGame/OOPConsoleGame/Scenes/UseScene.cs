@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace OOPConsoleGame.Scenes
 {
-    internal class UseScene
+    public class UseScene : BaseScene
     {
+        public override void Render()
+        {
+            
+        }
+
+        public override void Update()
+        {
+            
+        }
+
+        public override void Result()
+        {
+            
+        }
     }
 }

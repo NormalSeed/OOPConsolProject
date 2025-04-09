@@ -10,7 +10,7 @@ namespace OOPConsoleGame.Scenes
     {
         public override void Render()
         {
-            Console.WriteLine($"{EInventoryScene.chosenItem.Name}을 장착하시겠습니까?");
+            Console.WriteLine($"{EInventoryScene.chosenItem.Name}을/를 장착하시겠습니까?");
             Console.WriteLine();
             Console.WriteLine("1. 예");
             Console.WriteLine("2. 아니오");

@@ -10,6 +10,7 @@ namespace OOPConsoleGame.Scenes
     public class InventoryScene : BaseScene
     {
         private int page = 1;
+        public static IUsable chosenItem;
 
         public override void Render()
         {
@@ -46,7 +47,7 @@ namespace OOPConsoleGame.Scenes
                 case ConsoleKey.RightArrow:
                     if (Game.Player.inventory.Count > page * 5)
                     { 
-                        page += 1; 
+                        page += 1;
                     }
                     break;
                 case ConsoleKey.LeftArrow:
@@ -56,19 +57,34 @@ namespace OOPConsoleGame.Scenes
                     }
                     break;
                 case ConsoleKey.D1:
-
+                    if (Game.Player.inventory.Count > 1)
+                    {
+                        chosenItem = Game.usableDic[Game.Player.inventory[1 + (page - 1) * 5].Name];
+                    }
                     break;
                 case ConsoleKey.D2:
-
+                    if (Game.Player.inventory.Count > 2)
+                    {
+                        chosenItem = Game.usableDic[Game.Player.inventory[2 + (page - 1) * 5].Name];
+                    }
                     break;
                 case ConsoleKey.D3:
-
+                    if (Game.Player.inventory.Count > 3)
+                    {
+                        chosenItem = Game.usableDic[Game.Player.inventory[3 + (page - 1) * 5].Name];
+                    }
                     break;
                 case ConsoleKey.D4:
-
+                    if (Game.Player.inventory.Count > 4)
+                    {
+                        chosenItem = Game.usableDic[Game.Player.inventory[4 + (page - 1) * 5].Name];
+                    }
                     break;
                 case ConsoleKey.D5:
-
+                    if (Game.Player.inventory.Count > 5)
+                    {
+                        chosenItem = Game.usableDic[Game.Player.inventory[5 + (page - 1) * 5].Name];
+                    }
                     break;
             }
         }
