@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using OOPConsoleGame.Scenes;
+using OOPConsoleGame.Items;
 
 namespace OOPConsoleGame
 {
@@ -17,6 +18,10 @@ namespace OOPConsoleGame
         private static Stack<string> uiStack = new Stack<string>();
         private static Dictionary<string, BaseScene> sceneDic;
         private static BaseScene curScene;
+
+        private static Dictionary<string, IUsable> usableDic;
+        private static Dictionary<string, IEquipable> equipableDic;
+
         private static Player player;
 
         public static Player Player { get { return player; } }
@@ -37,6 +42,12 @@ namespace OOPConsoleGame
             sceneDic.Add("Smithery", new SmitheryScene());
             sceneDic.Add("RianHouse", new RianHouseScene());
             sceneDic.Add("Inventory", new InventoryScene());
+            sceneDic.Add("EInventory", new EInventoryScene());
+
+            usableDic = new Dictionary<string, IUsable>();
+            usableDic.Add("Low Potion", new Potion("Low Potion", 5));
+
+            equipableDic = new Dictionary<string, IEquipable>();
 
             uiStack = new Stack<string>();
             uiStack.Push("Title");
@@ -45,12 +56,16 @@ namespace OOPConsoleGame
             //플레이어 설정
             player = new Player();
             player.level = 1;
-            player.hp = 10;
+            player.maxHp = 10;
+            player.curHp = 10;
             player.atk = 5;
             player.def = 5;
             player.spd = 5;
             player.inventory = new List<Item>();
             player.inventory.Add(new Item("Gold", 300));
+            player.inventory.Add(new Item("Low Potion", 5));
+            player.equipments = new Dictionary<string, IEquipable>();
+            player.Einventory = new List<Item>();
         }
         public static void Run()
         {

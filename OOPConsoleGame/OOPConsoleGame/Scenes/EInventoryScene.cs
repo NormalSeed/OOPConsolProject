@@ -7,26 +7,25 @@ using OOPConsoleGame.Items;
 
 namespace OOPConsoleGame.Scenes
 {
-    public class InventoryScene : BaseScene
+    public class EInventoryScene : BaseScene
     {
-        List<Item> inventory = new List<Item>();
         private int page = 1;
+        List<Item> einventory = new List<Item>();
         public override void Render()
         {
             Console.Clear();
-            //한 페이지에 5개씩 인벤토리의 물건을 보여주고
-            //6번째 줄에는 소지 골드(G)
-            //그 다음 줄에는 페이지수를 표시
-            inventory = Game.Player.inventory;
-            if (inventory.Count > 1)
+
+            einventory = Game.Player.Einventory;
+
+            if (einventory.Count > 1)
             {
-                for (int i = 1; i < inventory.Count; i++)
+                for (int i = 1; i < einventory.Count; i++)
                 {
                     int index = i % 5;
-                    if (inventory[i] != null)
+                    if (einventory[i] != null)
                     {
-                        Console.WriteLine($"{index}. {inventory[index + (page - 1) * 5].Name} " +
-                            $": {inventory[index + (page - 1) * 5].Quantity}개");
+                        Console.WriteLine($"{index}. {einventory[index + (page - 1) * 5].Name} " +
+                            $": {einventory[index + (page - 1) * 5].Quantity}개");
                     }
                     else
                     {
@@ -35,19 +34,18 @@ namespace OOPConsoleGame.Scenes
                 }
             }
             Console.SetCursorPosition(0, 5);
-            Console.WriteLine($"{inventory[0].Quantity} G");
             Console.WriteLine($"{page + 1} 페이지");
             Console.WriteLine("[결정] : 번호    [뒤로가기] : ESC");
         }
 
         public override void Update()
         {
-            switch(input)
+            switch (input)
             {
                 case ConsoleKey.RightArrow:
-                    if (inventory.Count > page * 5)
-                    { 
-                        page += 1; 
+                    if (einventory.Count > page * 5)
+                    {
+                        page += 1;
                     }
                     break;
                 case ConsoleKey.LeftArrow:
@@ -76,12 +74,11 @@ namespace OOPConsoleGame.Scenes
 
         public override void Result()
         {
-            switch(input)
+            switch (input)
             {
                 case ConsoleKey.Escape:
                     Game.PreviousScene();
                     break;
-
             }
         }
     }

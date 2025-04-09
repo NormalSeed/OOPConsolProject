@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OOPConsoleGame.Items;
 
 namespace OOPConsoleGame
 {
     public class Player
     {
         public int level;
-        public int hp;
+        public int maxHp;
+        public int curHp;
         public int atk;
         public int def;
         public int spd;
         public Position position;
         public bool[,] map;
         public List<Item> inventory;
+        public Dictionary<string, IEquipable> equipments;
+        public List<Item> Einventory;
 
         public void SetPosition(int x, int y)
         {
