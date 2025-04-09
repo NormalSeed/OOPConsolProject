@@ -76,5 +76,19 @@ namespace OOPConsoleGame
             curScene = sceneDic[uiStack.Peek()];
             Console.Clear();
         }
+
+        public static void OverlapScene(string sceneName)
+        {
+            uiStack.Push(sceneName);
+            curScene = sceneDic[uiStack.Peek()];
+            Console.Clear();
+        }
+
+        public static void PreviousScene(string sceneName)
+        {
+            uiStack.Pop();
+            curScene = sceneDic[uiStack.Peek()];
+            Console.Clear();
+        }
     }
 }
