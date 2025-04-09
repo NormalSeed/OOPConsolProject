@@ -19,10 +19,13 @@ namespace OOPConsoleGame.Scenes
 
         public override void Update()
         {
-            switch(input)
+            switch (input)
             {
                 case ConsoleKey.D1:
                     Game.Player.Einventory.Add(new Item("단단한 철검", 1));
+                    Console.WriteLine("단단한 철검을 손에 넣었다!");
+                    Console.WriteLine();
+                    Util.Wait();
                     break;
             }
         }
@@ -31,6 +34,15 @@ namespace OOPConsoleGame.Scenes
         {
             //1번 누르면 구매 후 광장으로
             //2번 누르면 대장간씬으로
+            switch (input)
+            {
+                case ConsoleKey.D1:
+                    Game.ChangeScene("Town");
+                    break;
+                case ConsoleKey.D2:
+                    Game.ChangeScene("Smithery");
+                    break;
+            }    
         }
     }
 }

@@ -10,22 +10,20 @@ namespace OOPConsoleGame.Scenes
     public class EInventoryScene : BaseScene
     {
         private int page = 1;
-        List<Item> einventory = new List<Item>();
+        public static Item chosenItem;
         public override void Render()
         {
             Console.Clear();
 
-            einventory = Game.Player.Einventory;
-
-            if (einventory.Count > 1)
+            if (Game.Player.Einventory.Count >= 1)
             {
-                for (int i = 1; i < einventory.Count; i++)
+                for (int i = 0; i < Game.Player.Einventory.Count; i++)
                 {
                     int index = i % 5;
-                    if (einventory[i] != null)
+                    if (Game.Player.Einventory[i] != null)
                     {
-                        Console.WriteLine($"{index}. {einventory[index + (page - 1) * 5].Name} " +
-                            $": {einventory[index + (page - 1) * 5].Quantity}개");
+                        Console.WriteLine($"{index + 1}. {Game.Player.Einventory[index + (page - 1) * 5].Name} " +
+                            $": {Game.Player.Einventory[index + (page - 1) * 5].Quantity}개");
                     }
                     else
                     {
@@ -34,7 +32,7 @@ namespace OOPConsoleGame.Scenes
                 }
             }
             Console.SetCursorPosition(0, 5);
-            Console.WriteLine($"{page + 1} 페이지");
+            Console.WriteLine($"{page} 페이지");
             Console.WriteLine("[결정] : 번호    [뒤로가기] : ESC");
         }
 
@@ -43,7 +41,7 @@ namespace OOPConsoleGame.Scenes
             switch (input)
             {
                 case ConsoleKey.RightArrow:
-                    if (einventory.Count > page * 5)
+                    if (Game.Player.Einventory.Count > page * 5)
                     {
                         page += 1;
                     }
@@ -55,7 +53,7 @@ namespace OOPConsoleGame.Scenes
                     }
                     break;
                 case ConsoleKey.D1:
-
+                    chosenItem = Game.Player.Einventory[1 + (page - 1) * 5];
                     break;
                 case ConsoleKey.D2:
 

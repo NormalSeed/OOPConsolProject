@@ -34,6 +34,12 @@ namespace OOPConsoleGame.Scenes
                     Console.WriteLine("설명을 끝낸 당신은 카르타에게 장비를 부탁합니다.");
                     Console.WriteLine("\"장비를 갖고 싶으면 돈을 내야지. 비싸지는 않게 해주마. [200G]\"");
                     Util.Wait();
+                    switch(input)
+                    {
+                        case ConsoleKey.D1:
+                            Game.ChangeScene("SmithTrade");
+                            break;
+                    }    
                     // TODO : 거래씬으로 이동
                     break;
                 case ConsoleKey.D2:

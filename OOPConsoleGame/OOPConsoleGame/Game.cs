@@ -24,7 +24,7 @@ namespace OOPConsoleGame
 
         private static Player player;
 
-        public static Player Player { get { return player; } }
+        public static Player Player { get { return player; } set { player = value; } }
 
 
         public static void Start()
@@ -40,12 +40,14 @@ namespace OOPConsoleGame
             sceneDic.Add("Town", new TownScene());
             sceneDic.Add("ElderHouse", new ElderHouseScene());
             sceneDic.Add("Smithery", new SmitheryScene());
+            sceneDic.Add("SmithTrade", new SmithTradeScene());
             sceneDic.Add("RianHouse", new RianHouseScene());
             sceneDic.Add("Inventory", new InventoryScene());
             sceneDic.Add("EInventory", new EInventoryScene());
+            sceneDic.Add("Equip", new EquipScene());
 
             usableDic = new Dictionary<string, IUsable>();
-            usableDic.Add("Low Potion", new Potion("Low Potion", 5));
+            usableDic.Add("Low Potion", new Potion("하급 포션", 5));
 
             equipableDic = new Dictionary<string, IEquipable>();
 
@@ -55,17 +57,17 @@ namespace OOPConsoleGame
 
             //플레이어 설정
             player = new Player();
-            player.level = 1;
-            player.maxHp = 10;
-            player.curHp = 10;
-            player.atk = 5;
-            player.def = 5;
-            player.spd = 5;
-            player.inventory = new List<Item>();
-            player.inventory.Add(new Item("Gold", 300));
-            player.inventory.Add(new Item("Low Potion", 5));
-            player.equipments = new Dictionary<string, IEquipable>();
-            player.Einventory = new List<Item>();
+            Player.level = 1;
+            Player.maxHp = 10;
+            Player.curHp = 10;
+            Player.atk = 5;
+            Player.def = 5;
+            Player.spd = 5;
+            Player.inventory = new List<Item>();
+            Player.inventory.Add(new Item("Gold", 300));
+            Player.inventory.Add(new Item("하급 포션", 5));
+            Player.equipments = new Dictionary<string, IEquipable>();
+            Player.Einventory = new List<Item>();
         }
         public static void Run()
         {

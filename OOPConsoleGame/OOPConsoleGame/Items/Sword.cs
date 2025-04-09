@@ -10,22 +10,27 @@ namespace OOPConsoleGame.Items
     {
         string Name { get; set; }
         int Atk { get; set; }
-        public Sword(string name, int atk)
+        string type { get; set; }
+        bool IsEquipped { get; set; }
+        public Sword(string name, int atk, string type, bool isEquipped = false)
         {
             Name = name;
             Atk = atk;
+            this.type = type;
+            IsEquipped = isEquipped;
         }
 
         public void Equip()
         {
-            Game.Player.equipments.Add(Name, this);
-            Game.Player.atk += Atk;
+            Game.OverlapScene("Equip");
+            //Game.Player.equipments.Add(Name, this);
+            //Game.Player.atk += Atk;
         }
 
         public void Unequip()
         {
-            Game.Player.equipments.Remove(Name);
-            Game.Player.atk -= Atk;
+            //Game.Player.equipments.Remove(Name);
+            //Game.Player.atk -= Atk;
         }
     }
 }
