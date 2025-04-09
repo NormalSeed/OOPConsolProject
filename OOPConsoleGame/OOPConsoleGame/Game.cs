@@ -84,7 +84,7 @@ namespace OOPConsoleGame
             Console.Clear();
         }
 
-        public static void PreviousScene(string sceneName)
+        public static void PreviousScene()
         {
             uiStack.Pop();
             curScene = sceneDic[uiStack.Peek()];
