@@ -110,9 +110,6 @@ namespace OOPConsoleGame
         }
         public void UseItem(string name)
         {
-            //아이템 인벤토리에서 아이템을 불러와서
-            //아이템이 가진 사용 기능을 쓴다
-            //인벤토리 리스트에서 아이템의 Quantity를 1 줄인다.
             int index = inventory.FindIndex(i => i.Name == name);
             IUsable item = Game.usableDic[name];
             inventory[index].Quantity -= 1;

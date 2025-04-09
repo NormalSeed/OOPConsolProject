@@ -7,28 +7,27 @@ using OOPConsoleGame.Maps;
 
 namespace OOPConsoleGame.Scenes
 {
-    public class TownScene : BaseScene
+    public class NorthForestScene : BaseScene
     {
-        private TownMap townMap;
+        private NorthForestMap nFMap;
         public static bool isInit = true;
 
         public override void Render()
         {
             if (isInit)
             {
-                townMap = new TownMap();
-                townMap.CreateMap();
+                nFMap = new NorthForestMap();
+                nFMap.CreateMap();
                 isInit = false;
             }
-            townMap.PrintMap();
-            Console.WriteLine("당신은 꿈에서 깨어난 뒤, 손에 새겨진 문양의 의미를 알기 위해 움직입니다.");
-            Console.WriteLine("눈앞에 펼쳐진 마을 광장은 여느때처럼 한산합니다.");
+            nFMap.PrintMap();
+            Console.WriteLine("마을 북쪽에 있는 숲입니다. 멀리서 늑대 울음소리가 울려퍼집니다.");
+            Console.WriteLine("숲에는 고블린의 둥지가 있습니다. 전투가 벌어질 것 같은 예감이 듭니다.");
             Console.WriteLine();
 
-            townMap.SetObject();
+            nFMap.SetObject();
             Game.Player.Print();
         }
-
         public override void Update()
         {
             Game.Player.Move(input);
@@ -36,7 +35,7 @@ namespace OOPConsoleGame.Scenes
 
         public override void Result()
         {
-            townMap.ObjInteract();
+            nFMap.ObjInteract();
 
             switch (input)
             {

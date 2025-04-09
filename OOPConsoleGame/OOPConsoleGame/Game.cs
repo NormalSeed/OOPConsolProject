@@ -49,13 +49,17 @@ namespace OOPConsoleGame
             sceneDic.Add("Equip", new EquipScene());
             sceneDic.Add("Unequip", new UnequipScene());
             sceneDic.Add("Status", new StatusScene());
+            sceneDic.Add("NorthForest", new NorthForestScene());
+            sceneDic.Add("Battle", new BattleScene());
 
             usableDic = new Dictionary<string, IUsable>();
             usableDic.Add("하급 포션", new Potion("하급 포션", 5));
+            usableDic.Add("중급 포션", new Potion("중급 포션", 10));
 
             equipableDic = new Dictionary<string, IEquipable>();
             equipableDic.Add("단단한 철검", new Weapon("단단한 철검", 3, "Weapon"));
             equipableDic.Add("철검", new Weapon("철검", 2, "Weapon"));
+            equipableDic.Add("가죽 부츠", new Boots("가죽 부츠", 2, "Boots"));
 
             uiStack = new Stack<string>();
             uiStack.Push("Title");

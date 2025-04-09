@@ -1,35 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using OOPConsoleGame.Objects;
+using OOPConsoleGame.Items;
 using OOPConsoleGame.Scenes;
 
 namespace OOPConsoleGame.Maps
 {
-    public class TownMap : IMap
+    public class NorthForestMap : IMap
     {
         private string[] mapData;
-        private bool[,] map;
+        public bool[,] map;
 
         private List<GameObject> gameObjects;
-
         public void CreateMap()
         {
             mapData = new string[]
             {
-                "###############",
-                "#        ▲    #",
-                "##            #",
-                "#             #",
-                "#           ###",
-                "#             #",
-                "#             #",
-                "#   ▲▲▲       #",
-                "#   ▲▲        #",
-                "###############"
+                "▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲",
+                "▲      ▲      ▲",
+                "▲  ▲▲▲ ▲    ▲ ▲",
+                "▲  ▲   ▲  ▲▲▲▲▲",
+                "▲          ▲  ▲",
+                "▲▲▲▲▲▲     ▲  ▲",
+                "▲       ▲▲▲▲  ▲",
+                "▲ ▲▲▲▲     ▲  ▲",
+                "▲ ▲           ▲",
+                "▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲"
             };
             map = new bool[10, 15];
             for (int y = 0; y < 10; y++)
@@ -39,14 +38,13 @@ namespace OOPConsoleGame.Maps
                     map[y, x] = mapData[y][x] == ' ' ? true : false;
                 }
             }
-            Game.Player.position = new Position(1, 1);
+            Game.Player.position = new Position(1, 8);
             Game.Player.map = map;
-
             gameObjects = new List<GameObject>();
-            gameObjects.Add(new Place("ElderHouse", ConsoleColor.Blue, 'E', new Position(13, 1)));
-            gameObjects.Add(new Place("Smithery", ConsoleColor.DarkRed, 'S', new Position(1, 7)));
-            gameObjects.Add(new Place("RianHouse", ConsoleColor.DarkGreen, 'R', new Position(12, 8)));
-            gameObjects.Add(new Place("NorthForest", ConsoleColor.Green, 'F', new Position(13, 5)));
+            gameObjects.Add(new Place("AncientRuin", ConsoleColor.White, 'A', new Position(13, 2)));
+            gameObjects.Add(new Place("Town", ConsoleColor.White, 'T', new Position(1, 8)));
+            gameObjects.Add(new PickableItem(new Item("중급 포션", 1), ConsoleColor.DarkYellow, 'i', new Position(12, 4)));
+            gameObjects.Add(new PickableEquipment(new Item("가죽 부츠", 1), ConsoleColor.Cyan, 'E', new Position(6, 1)));
         }
 
         public void PrintMap()
@@ -77,12 +75,6 @@ namespace OOPConsoleGame.Maps
             }
         }
 
-        public void DelObject(GameObject go)
-        {
-            int index = gameObjects.IndexOf(go);
-            gameObjects.RemoveAt(index);
-        }
-
         public void ObjInteract()
         {
             for (int i = 0; i < gameObjects.Count; i++)
@@ -99,7 +91,7 @@ namespace OOPConsoleGame.Maps
                     }
                     else
                     {
-                        TownScene.isInit = true;
+                        NorthForestScene.isInit = true;
                     }
                         break;
                 }
