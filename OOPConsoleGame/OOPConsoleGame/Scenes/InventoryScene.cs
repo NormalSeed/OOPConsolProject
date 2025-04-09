@@ -27,6 +27,7 @@ namespace OOPConsoleGame.Scenes
             Console.SetCursorPosition(0, 5);
             Console.WriteLine($"{inventory[0].Quantity} G");
             Console.WriteLine($"{page + 1} 페이지");
+            Console.WriteLine("[결정] : 스페이스바    [뒤로가기] : ESC");
         }
 
         public override void Update()
@@ -36,7 +37,13 @@ namespace OOPConsoleGame.Scenes
 
         public override void Result()
         {
-            
+            switch(input)
+            {
+                case ConsoleKey.Escape:
+                    Game.PreviousScene();
+                    break;
+
+            }
         }
     }
 }
