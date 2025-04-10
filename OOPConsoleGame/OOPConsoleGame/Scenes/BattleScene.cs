@@ -3,10 +3,15 @@
     public class BattleScene : BaseScene
     {
         public static new Monster monster;
+        public static bool isInit = true;
         public override void Render()
         {
-            Util.PrintS("몬스터 조우!!");
-            Thread.Sleep(100);
+            if (isInit)
+            {
+                Util.PrintS("몬스터 조우!!");
+                Thread.Sleep(100);
+                isInit = false;
+            }
             Console.Clear();
             Console.WriteLine($"{monster.name}  lvl  {monster.level}");
             Console.WriteLine($"HP  {monster.hp} / {monster.maxHp}");

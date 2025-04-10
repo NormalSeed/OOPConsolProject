@@ -9,7 +9,7 @@
             Console.WriteLine("계속 진행하려면 아무 키나 누르세요.");
             Console.ReadKey();
         }
-        public static void PrintS(string line, int delay = 20)
+        public static void PrintS(string line, int delay = 10)
         {
             foreach (char c in line)
             {

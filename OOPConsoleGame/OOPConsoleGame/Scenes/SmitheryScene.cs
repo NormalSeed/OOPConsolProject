@@ -4,11 +4,22 @@ namespace OOPConsoleGame.Scenes
 {
     public class SmitheryScene : BaseScene
     {
+        private bool isInit = true;
         public override void Render()
         {
-            Util.PrintS("대장간의 주인인 대장장이 카르타가 당신을 힐끗 쳐다봅니다.");
-            Util.PrintS("\"왔으면 자리로 가서 일을 시작해.\"");
-            Util.PrintS("당신은 카르타에게 자초지종을 설명합니다...");
+            if (isInit)
+            {
+                Util.PrintS("대장간의 주인인 대장장이 카르타가 당신을 힐끗 쳐다봅니다.");
+                Util.PrintS("\"왔으면 자리로 가서 일을 시작해.\"");
+                Util.PrintS("당신은 카르타에게 자초지종을 설명합니다...");
+                isInit = false;
+            }
+            else
+            {
+                Console.WriteLine("대장간의 주인인 대장장이 카르타가 당신을 힐끗 쳐다봅니다.");
+                Console.WriteLine("\"왔으면 자리로 가서 일을 시작해.\"");
+                Console.WriteLine("당신은 카르타에게 자초지종을 설명합니다...");
+            }
             Console.WriteLine();
             Console.WriteLine("1. 카르타에게 무기와 방어구를 부탁한다.");
             Console.WriteLine("2. 스스로 무기와 방어구를 제작한다.");

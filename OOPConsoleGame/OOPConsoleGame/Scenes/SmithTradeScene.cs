@@ -6,7 +6,7 @@ namespace OOPConsoleGame.Scenes
     {
         public override void Render()
         {
-            Util.PrintS("카르타의 장비를 구매하시겠습니까?");
+            Console.WriteLine("카르타의 장비를 구매하시겠습니까?");
             Console.WriteLine();
             Console.WriteLine("1. 예");
             Console.WriteLine("2. 아니오");
@@ -19,7 +19,7 @@ namespace OOPConsoleGame.Scenes
                 case ConsoleKey.D1:
                     Game.Player.eInventory.Add(new Item("단단한 철검", 1));
                     Game.Player.inventory[0].Quantity -= 200;
-                    Util.PrintS("단단한 철검을 손에 넣었다!");
+                    Console.WriteLine("단단한 철검을 손에 넣었다!");
                     Console.WriteLine();
                     Util.Wait();
                     break;

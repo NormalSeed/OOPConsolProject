@@ -2,11 +2,22 @@
 {
     public class ElderHouseScene : BaseScene
     {
+        private bool isInit = true;
         public override void Render()
         {
-            Util.PrintS("당신은 마을 장로의 집으로 들어갔습니다.");
-            Util.PrintS("\"여행을 떠나기 전에 물어볼 것이 있나?\"");
-            Util.PrintS("당신은 장로의 물음에 대답합니다.");
+            if (isInit)
+            {
+                Util.PrintS("당신은 마을 장로의 집으로 들어갔습니다.");
+                Util.PrintS("\"여행을 떠나기 전에 물어볼 것이 있나?\"");
+                Util.PrintS("당신은 장로의 물음에 대답합니다.");
+                isInit = false;
+            }
+            else
+            {
+                Console.WriteLine("당신은 마을 장로의 집으로 들어갔습니다.");
+                Console.WriteLine("\"여행을 떠나기 전에 물어볼 것이 있나?\"");
+                Console.WriteLine("당신은 장로의 물음에 대답합니다.");
+            }
             Console.WriteLine();
             Console.WriteLine("1. \"문양에 대해 자세히 알고 싶습니다.\"");
             Console.WriteLine("2. \"첫번째 봉인은 어디에 있습니까?\"");

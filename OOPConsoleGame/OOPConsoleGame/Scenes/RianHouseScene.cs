@@ -1,13 +1,27 @@
-﻿namespace OOPConsoleGame.Scenes
+﻿using System.Runtime.InteropServices;
+
+namespace OOPConsoleGame.Scenes
 {
     public class RianHouseScene : BaseScene
     {
+        private bool isInit = true;
         public override void Render()
         {
-            Util.PrintS("당신은 어릴 적 친구인 리안을 찾아왔습니다.");
-            Util.PrintS("리안은 북쪽 숲 근처에서 종종 사냥을 합니다.");
-            Util.PrintS("현관에 들어가니 이야기를 들었는지 리안이 걱정스러운 표정으로 바라봅니다.");
-            Util.PrintS("\"네가 전설속의 파멸의 인도자라고? 그런 말도 안되는 일이...\"");
+            if (isInit)
+            {
+                Util.PrintS("당신은 어릴 적 친구인 리안을 찾아왔습니다.");
+                Util.PrintS("리안은 북쪽 숲 근처에서 종종 사냥을 합니다.");
+                Util.PrintS("현관에 들어가니 이야기를 들었는지 리안이 걱정스러운 표정으로 바라봅니다.");
+                Util.PrintS("\"네가 전설속의 파멸의 인도자라고? 그런 말도 안되는 일이...\"");
+                isInit = false;
+            }
+            else
+            {
+                Console.WriteLine("당신은 어릴 적 친구인 리안을 찾아왔습니다.");
+                Console.WriteLine("리안은 북쪽 숲 근처에서 종종 사냥을 합니다.");
+                Console.WriteLine("현관에 들어가니 이야기를 들었는지 리안이 걱정스러운 표정으로 바라봅니다.");
+                Console.WriteLine("\"네가 전설속의 파멸의 인도자라고? 그런 말도 안되는 일이...\"");
+            }
             Console.WriteLine();
             Console.WriteLine("1. 리안에게 북쪽숲에 대해 물어본다.");
             Console.WriteLine("2. 리안에게 동료가 되기를 권유한다.");
