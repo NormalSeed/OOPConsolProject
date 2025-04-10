@@ -71,6 +71,11 @@ namespace OOPConsoleGame
             player.inventory = new List<Item>();
             player.inventory.Add(new Item("Gold", 300));
             player.inventory.Add(new Item("하급 포션", 5));
+            player.inventory.Add(new Item("Test1", 1));
+            player.inventory.Add(new Item("Test2", 1));
+            player.inventory.Add(new Item("Test3", 1));
+            player.inventory.Add(new Item("Test4", 1));
+            player.inventory.Add(new Item("Test5", 1));
             player.equipments = new Dictionary<string, IEquipable>();
             player.equipments.Add("Weapon", null);
             player.equipments.Add("Armor", null);

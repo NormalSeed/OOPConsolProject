@@ -15,13 +15,12 @@ namespace OOPConsoleGame.Scenes
             //그 다음 줄에는 페이지수를 표시
             if (Game.Player.inventory.Count > 1)
             {
-                for (int i = 1; i < Game.Player.inventory.Count; i++)
+                for (int i = 1; i < Game.Player.inventory.Count - (page - 1)* 5; i++)
                 {
-                    int index = i % 5;
-                    if (Game.Player.inventory[i] != null)
+                    if (Game.Player.inventory[i + (page - 1) * 5] != null)
                     {
-                        Console.WriteLine($"{index}. {Game.Player.inventory[index + (page - 1) * 5].Name} " +
-                            $": {Game.Player.inventory[index + (page - 1) * 5].Quantity}개");
+                        Console.WriteLine($"{i}. {Game.Player.inventory[i + (page - 1) * 5].Name} " +
+                            $": {Game.Player.inventory[i + (page - 1) * 5].Quantity}개");
                     }
                     else
                     {
@@ -29,7 +28,7 @@ namespace OOPConsoleGame.Scenes
                     }
                 }
             }
-            Console.SetCursorPosition(0, 5);
+            Console.SetCursorPosition(0, 6);
             Console.WriteLine($"{Game.Player.inventory[0].Quantity} G");
             Console.WriteLine($"{page} 페이지");
             Console.WriteLine("[결정] : 번호    [뒤로가기] : ESC");
@@ -46,37 +45,37 @@ namespace OOPConsoleGame.Scenes
                     }
                     break;
                 case ConsoleKey.LeftArrow:
-                    if (page > 2)
+                    if (page >= 2)
                     {
                         page -= 1;
                     }
                     break;
                 case ConsoleKey.D1:
-                    if (Game.Player.inventory.Count > 1)
+                    if (Game.Player.inventory.Count > 1 + (page - 1) * 5)
                     {
                         chosenItem = Game.usableDic[Game.Player.inventory[1 + (page - 1) * 5].Name];
                     }
                     break;
                 case ConsoleKey.D2:
-                    if (Game.Player.inventory.Count > 2)
+                    if (Game.Player.inventory.Count > 2 + (page - 1) * 5)
                     {
                         chosenItem = Game.usableDic[Game.Player.inventory[2 + (page - 1) * 5].Name];
                     }
                     break;
                 case ConsoleKey.D3:
-                    if (Game.Player.inventory.Count > 3)
+                    if (Game.Player.inventory.Count > 3 + (page - 1) * 5)
                     {
                         chosenItem = Game.usableDic[Game.Player.inventory[3 + (page - 1) * 5].Name];
                     }
                     break;
                 case ConsoleKey.D4:
-                    if (Game.Player.inventory.Count > 4)
+                    if (Game.Player.inventory.Count > 4 + (page - 1) * 5)
                     {
                         chosenItem = Game.usableDic[Game.Player.inventory[4 + (page - 1) * 5].Name];
                     }
                     break;
                 case ConsoleKey.D5:
-                    if (Game.Player.inventory.Count > 5)
+                    if (Game.Player.inventory.Count > 5 + (page - 1) * 5)
                     {
                         chosenItem = Game.usableDic[Game.Player.inventory[5 + (page - 1) * 5].Name];
                     }

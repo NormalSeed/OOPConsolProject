@@ -12,13 +12,12 @@ namespace OOPConsoleGame.Scenes
 
             if (Game.Player.eInventory.Count >= 1)
             {
-                for (int i = 0; i < Game.Player.eInventory.Count; i++)
+                for (int i = 0; i < Game.Player.eInventory.Count - (page - 1) * 5; i++)
                 {
-                    int index = i % 5;
                     if (Game.Player.eInventory[i] != null)
                     {
-                        Console.WriteLine($"{index + 1}. {Game.Player.eInventory[index + (page - 1) * 5].Name} " +
-                            $": {Game.Player.eInventory[index + (page - 1) * 5].Quantity}개");
+                        Console.WriteLine($"{i + 1}. {Game.Player.eInventory[i + (page - 1) * 5].Name} " +
+                            $": {Game.Player.eInventory[i + (page - 1) * 5].Quantity}개");
                     }
                     else
                     {
@@ -26,7 +25,7 @@ namespace OOPConsoleGame.Scenes
                     }
                 }
             }
-            Console.SetCursorPosition(0, 5);
+            Console.SetCursorPosition(0, 6);
             Console.WriteLine($"{page} 페이지");
             Console.WriteLine("[결정] : 번호    [뒤로가기] : ESC    [현재 장비] : C");
         }
@@ -42,37 +41,37 @@ namespace OOPConsoleGame.Scenes
                     }
                     break;
                 case ConsoleKey.LeftArrow:
-                    if (page > 2)
+                    if (page >= 2)
                     {
                         page -= 1;
                     }
                     break;
                 case ConsoleKey.D1:
-                    if (Game.Player.eInventory.Count > 0)
+                    if (Game.Player.eInventory.Count > 0 + (page - 1) * 5)
                     {
                         chosenItem = Game.equipableDic[Game.Player.eInventory[0 + (page - 1) * 5].Name];
                     }
                     break;
                 case ConsoleKey.D2:
-                    if (Game.Player.eInventory.Count > 1)
+                    if (Game.Player.eInventory.Count > 1 + (page - 1) * 5)
                     {
                         chosenItem = Game.equipableDic[Game.Player.eInventory[1 + (page - 1) * 5].Name];
                     }
                     break;
                 case ConsoleKey.D3:
-                    if (Game.Player.eInventory.Count > 2)
+                    if (Game.Player.eInventory.Count > 2 + (page - 1) * 5)
                     {
                         chosenItem = Game.equipableDic[Game.Player.eInventory[2 + (page - 1) * 5].Name];
                     }
                     break;
                 case ConsoleKey.D4:
-                    if (Game.Player.eInventory.Count > 3)
+                    if (Game.Player.eInventory.Count > 3 + (page - 1) * 5)
                     {
                         chosenItem = Game.equipableDic[Game.Player.eInventory[3 + (page - 1) * 5].Name];
                     }
                     break;
                 case ConsoleKey.D5:
-                    if (Game.Player.eInventory.Count > 4)
+                    if (Game.Player.eInventory.Count > 4 + (page - 1) * 5)
                     {
                         chosenItem = Game.equipableDic[Game.Player.eInventory[4 + (page - 1) * 5].Name];
                     }
