@@ -4,6 +4,7 @@
     {
         public override void Render()
         {
+            Console.Clear();
             Console.WriteLine($"{EInventoryScene.chosenItem.Name}을/를 장착하시겠습니까?");
             Console.WriteLine();
             Console.WriteLine("1. 예");

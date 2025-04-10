@@ -7,6 +7,7 @@ namespace OOPConsoleGame.Scenes
 
         public override void Render()
         {
+            Console.Clear();
             Game.Player.ItemAdded += OnItemAdded;
             Console.WriteLine("카르타의 장비를 구매하시겠습니까?");
             Console.WriteLine();
