@@ -17,6 +17,8 @@ namespace OOPConsoleGame
         public List<Item> eInventory;
         public bool isDead = false;
 
+        public event Action<string> ItemAdded;
+
         public void SetPosition(int x, int y)
         {
             position.x = x;
@@ -53,6 +55,20 @@ namespace OOPConsoleGame
             {
                 position = targetPos;
             }
+        }
+
+        public void AddInventory(Item item)
+        {
+            inventory.Add(item);
+
+            ItemAdded?.Invoke(item.Name);
+        }
+
+        public void AddEInventory(Item item)
+        {
+            eInventory.Add(item);
+
+            ItemAdded?.Invoke(item.Name);
         }
 
         public void ShowStatus()

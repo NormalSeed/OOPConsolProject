@@ -5,7 +5,7 @@ namespace OOPConsoleGame
 {
     public class Game
     {
-        //게임 정보
+        //게임 데이터
 
         public static bool gameOver;
 
@@ -53,6 +53,7 @@ namespace OOPConsoleGame
             equipableDic = new Dictionary<string, IEquipable>();
             equipableDic.Add("단단한 철검", new Weapon("단단한 철검", 3, "Weapon"));
             equipableDic.Add("철검", new Weapon("철검", 2, "Weapon"));
+            equipableDic.Add("질긴 가죽갑옷", new Armor("질긴 가죽갑옷", 3, "Armor"));
             equipableDic.Add("가죽 부츠", new Boots("가죽 부츠", 2, "Boots"));
 
             uiStack = new Stack<string>();
