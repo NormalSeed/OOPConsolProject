@@ -22,19 +22,19 @@ namespace OOPConsoleGame.Scenes
             switch (input)
             {
                 case ConsoleKey.D1:
-                    if (Game.Player.equipments.ContainsKey("Weapon"))
+                    if (Game.Player.equipments["Weapon"] != null)
                     {
                         chosenItem = Game.Player.equipments["Weapon"];
                     }
-                    break;
+                        break;
                 case ConsoleKey.D2:
-                    if (Game.Player.equipments.ContainsKey("Armor"))
+                    if (Game.Player.equipments["Armor"] != null)
                     {
                         chosenItem = Game.Player.equipments["Armor"];
                     }
                     break;
                 case ConsoleKey.D3:
-                    if (Game.Player.equipments.ContainsKey("Boots"))
+                    if (Game.Player.equipments["Boots"] != null)
                     {
                         chosenItem = Game.Player.equipments["Boots"];
                     }
@@ -51,7 +51,7 @@ namespace OOPConsoleGame.Scenes
                     Game.PreviousScene();
                     break;
                 case ConsoleKey.D1:
-                    if (Game.Player.equipments.ContainsKey("Weapon"))
+                    if (Game.Player.equipments["Weapon"] != null)
                     {
                         Game.OverlapScene("Unequip");
                     }
@@ -63,7 +63,7 @@ namespace OOPConsoleGame.Scenes
                     }
                     break;
                 case ConsoleKey.D2:
-                    if (Game.Player.equipments.ContainsKey("Armor"))
+                    if (Game.Player.equipments["Armor"] != null)
                     {
                         Game.OverlapScene("Unequip");
                     }
@@ -75,7 +75,7 @@ namespace OOPConsoleGame.Scenes
                     }
                     break;
                 case ConsoleKey.D3:
-                    if (Game.Player.equipments.ContainsKey("Boots"))
+                    if (Game.Player.equipments["Boots"] != null)
                     {
                         Game.OverlapScene("Unequip");
                     }
