@@ -113,6 +113,7 @@ namespace OOPConsoleGame
         {
             int index = inventory.FindIndex(i => i.Name == name);
             IUsable item = Game.usableDic[name];
+            item.Use();
             inventory[index].Quantity -= 1;
             if (inventory[index].Quantity < 1)
             {

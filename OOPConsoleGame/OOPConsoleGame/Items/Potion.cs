@@ -17,19 +17,10 @@ namespace OOPConsoleGame.Items
         }
         public void Use()
         {
-            int index = Game.Player.inventory.FindIndex(item => item.Name == Name);
-            if (Game.Player.inventory[index].Quantity > 0)
+            Game.Player.curHp += HealAmount;
+            if (Game.Player.curHp > Game.Player.maxHp)
             {
-                Game.Player.curHp += HealAmount;
-                if (Game.Player.curHp > Game.Player.maxHp)
-                {
-                    Game.Player.curHp = Game.Player.maxHp;
-                }
-                Game.Player.inventory[index].Quantity -= 1;
-            }
-            else
-            {
-                Console.WriteLine("더이상 존재하지 않습니다.");
+                Game.Player.curHp = Game.Player.maxHp;
             }
         }
     }
