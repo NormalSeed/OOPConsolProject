@@ -5,7 +5,7 @@
         public override void Render()
         {
             Console.WriteLine("*********************");
-            Console.WriteLine("*     제목 미정     *");
+            Console.WriteLine("*   OOP  Mini RPG   *");
             Console.WriteLine("*********************");
             Console.WriteLine();
             Console.WriteLine("계속하려면 아무 키나 눌러주세요.");
