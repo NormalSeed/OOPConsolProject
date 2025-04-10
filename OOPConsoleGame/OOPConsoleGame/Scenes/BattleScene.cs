@@ -12,7 +12,8 @@ namespace OOPConsoleGame.Scenes
         public static new Monster monster;
         public override void Render()
         {
-            Console.WriteLine("몬스터 조우!!");
+            Util.PrintS("몬스터 조우!!");
+            Thread.Sleep(100);
             Console.Clear();
             Console.WriteLine($"{monster.name}  lvl  {monster.level}");
             Console.WriteLine($"HP  {monster.hp} / {monster.maxHp}");
