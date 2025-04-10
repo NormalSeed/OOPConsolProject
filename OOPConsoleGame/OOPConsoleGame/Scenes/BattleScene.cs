@@ -38,14 +38,12 @@ namespace OOPConsoleGame.Scenes
                         if (monster.isDead)
                         {
                             Util.Wait();
-                            Game.PreviousScene();
                         }
                         monster.GiveDMG();
                         Game.Player.DeathCheck();
                         if (Game.Player.isDead)
                         {
                             Util.Wait();
-                            Game.ChangeScene("GameOver");
                         }
                     }
                     else
@@ -75,6 +73,49 @@ namespace OOPConsoleGame.Scenes
                         if (Game.Player.isDead)
                         {
                             Util.Wait();
+                        }
+                    }
+                        break;
+
+            }
+        }
+
+        public override void Result()
+        {
+            switch (input)
+            {
+                case ConsoleKey.D1:
+                    if (Game.Player.spd > monster.spd)
+                    {
+                        if (monster.isDead)
+                        {
+                            Game.PreviousScene();
+                        }
+                        if (Game.Player.isDead)
+                        {
+                            Game.ChangeScene("GameOver");
+                        }
+                    }
+                    else
+                    {
+                        if (Game.Player.isDead)
+                        {
+                            Util.Wait();
+                            Game.ChangeScene("GameOver");
+                        }
+                        if (monster.isDead)
+                        {
+                            Util.Wait();
+                            Game.PreviousScene();
+                        }
+                    }
+                    break;
+                case ConsoleKey.D2:
+                    if (Game.Player.spd < monster.spd)
+                    {
+                        Game.Player.DeathCheck();
+                        if (Game.Player.isDead)
+                        {
                             Game.ChangeScene("GameOver");
                         }
                     }
@@ -82,7 +123,7 @@ namespace OOPConsoleGame.Scenes
                     {
                         Random random = new Random();
                         int randNum = random.Next(1, 101);
-                        int probability = Game.Player.spd * 100 / monster.spd;
+                        int probability = Game.Player.spd * 100 / monster.spd - 100;
 
                         if (probability >= randNum)
                         {
@@ -102,14 +143,17 @@ namespace OOPConsoleGame.Scenes
                             }
                         }
                     }
-                        break;
-
+                    break;
+                case ConsoleKey.I:
+                    Game.OverlapScene("Inventory");
+                    break;
+                case ConsoleKey.E:
+                    Game.OverlapScene("EInventory");
+                    break;
+                case ConsoleKey.P:
+                    Game.OverlapScene("Status");
+                    break;
             }
-        }
-
-        public override void Result()
-        {
-            
         }
     }
 }
