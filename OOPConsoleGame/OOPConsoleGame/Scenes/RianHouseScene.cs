@@ -9,15 +9,15 @@ namespace OOPConsoleGame.Scenes
         {
             if (isInit)
             {
-                Util.PrintS("당신은 어릴 적 친구인 리안을 찾아왔습니다.");
-                Util.PrintS("리안은 북쪽 숲 근처에서 종종 사냥을 합니다.");
-                Util.PrintS("현관에 들어가니 이야기를 들었는지 리안이 걱정스러운 표정으로 바라봅니다.");
-                Util.PrintS("\"네가 전설속의 파멸의 인도자라고? 그런 말도 안되는 일이...\"");
+                Util.PrintS("당신은 친구인 리안을 찾아왔습니다.\n" +
+                    "리안은 북쪽 숲 근처에서 종종 사냥을 합니다.\n" +
+                    "현관에 들어가니 이야기를 들었는지 리안이 걱정스러운 표정으로 바라봅니다.\n" +
+                    "\"네가 전설속의 파멸의 인도자라고? 그런 말도 안되는 일이...\"");
                 isInit = false;
             }
             else
             {
-                Console.WriteLine("당신은 어릴 적 친구인 리안을 찾아왔습니다.");
+                Console.WriteLine("당신은 친구인 리안을 찾아왔습니다.");
                 Console.WriteLine("리안은 북쪽 숲 근처에서 종종 사냥을 합니다.");
                 Console.WriteLine("현관에 들어가니 이야기를 들었는지 리안이 걱정스러운 표정으로 바라봅니다.");
                 Console.WriteLine("\"네가 전설속의 파멸의 인도자라고? 그런 말도 안되는 일이...\"");
@@ -39,14 +39,14 @@ namespace OOPConsoleGame.Scenes
             switch (input)
             {
                 case ConsoleKey.D1:
-                    Util.PrintS("\"북쪽 숲에는 오래된 폐허 말고는 아무것도 없어.\"");
-                    Util.PrintS("\"가끔 폐허 쪽에서 여자의 울음소리 같은게 들릴 때도 있지만\n분명 동물의 울음소리를 잘못 들은 거겠지.\"");
+                    Util.PrintS("\"북쪽 숲에는 오래된 폐허 말고는 아무것도 없어.\"\n" +
+                        "\"가끔 폐허 쪽에서 여자의 울음소리 같은게 들릴 때도 있지만\n분명 동물의 울음소리를 잘못 들은 거겠지.\"");
                     Util.Wait();
                     Console.Clear();
                     break;
                 case ConsoleKey.D2:
-                    Util.PrintS("\"나도 함께 떠나자고?\"");
-                    Util.PrintS("\"너도 알다시피 우리 어머니가 아프셔서... 같이 떠나는건 무리야.\"");
+                    Util.PrintS("\"나도 함께 떠나자고?\"\n" +
+                        "\"너도 알다시피 우리 어머니가 아프셔서... 같이 떠나는건 무리야.\"");
                     Util.Wait();
                     Console.Clear();
                     break;
