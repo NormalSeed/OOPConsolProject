@@ -24,12 +24,26 @@
 
         public void TakeDMG()
         {
-            hp += def - Game.Player.atk;
+            if(def < Game.Player.atk)
+            {
+                hp += def - Game.Player.atk;
+            }
+            else
+            {
+                hp -= 1;
+            }
         }
 
         public void GiveDMG()
         {
-            Game.Player.curHp += Game.Player.def - atk;
+            if(Game.Player.def < atk)
+            {
+                Game.Player.curHp += Game.Player.def - atk;
+            }
+            else
+            {
+                Game.Player.curHp -= 1;
+            }
         }
 
         public void DeathCheck()
