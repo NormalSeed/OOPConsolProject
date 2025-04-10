@@ -1,4 +1,7 @@
-﻿namespace OOPConsoleGame
+﻿using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+
+namespace OOPConsoleGame
 {
     public static class Util
     {
@@ -11,10 +14,23 @@
         }
         public static void PrintS(string line, int delay = 10)
         {
+            bool interrupt = false;
             foreach (char c in line)
             {
+                if(Console.KeyAvailable)
+                {
+                    ConsoleKey input = Console.ReadKey(true).Key;
+                    if (input == ConsoleKey.Spacebar)
+                    {
+                        interrupt = true;
+                    }
+                }
+                
+                if (interrupt == false)
+                {
+                    Thread.Sleep(delay);
+                }
                 Console.Write(c);
-                Thread.Sleep(delay);
             }
             Console.WriteLine();
         }
