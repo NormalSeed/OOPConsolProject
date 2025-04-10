@@ -20,6 +20,7 @@ namespace OOPConsoleGame
         public List<Item> inventory;
         public Dictionary<string, IEquipable> equipments;
         public List<Item> eInventory;
+        public bool isDead = false;
 
         public void SetPosition(int x, int y)
         {
@@ -116,6 +117,15 @@ namespace OOPConsoleGame
             if (inventory[index].Quantity < 1)
             {
                 inventory.RemoveAt(index);
+            }
+        }
+
+        public void DeathCheck()
+        {
+            if (curHp <= 0)
+            {
+                Console.WriteLine("플레이어가 쓰러졌다!");
+                isDead = true;
             }
         }
     }

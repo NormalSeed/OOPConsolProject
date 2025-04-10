@@ -13,7 +13,7 @@ namespace OOPConsoleGame
     {
         //게임 정보
 
-        private static bool gameOver;
+        public static bool gameOver;
 
         private static Stack<string> uiStack = new Stack<string>();
         private static Dictionary<string, BaseScene> sceneDic;
@@ -96,7 +96,8 @@ namespace OOPConsoleGame
         }
         public static void End()
         {
-
+            Console.WriteLine("게임을 다시 시작하세요");
+            Util.Wait();
         }
 
         public static void ChangeScene(string sceneName)

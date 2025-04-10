@@ -38,13 +38,15 @@ namespace OOPConsoleGame.Maps
                     map[y, x] = mapData[y][x] == ' ' ? true : false;
                 }
             }
-            Game.Player.position = new Position(1, 8);
+            Game.Player.position = new Position(1, 7);
             Game.Player.map = map;
+            MonsterFactory nFMonsterFactory = new MonsterFactory();
             gameObjects = new List<GameObject>();
             gameObjects.Add(new Place("AncientRuin", ConsoleColor.White, 'A', new Position(13, 2)));
             gameObjects.Add(new Place("Town", ConsoleColor.White, 'T', new Position(1, 8)));
             gameObjects.Add(new PickableItem(new Item("중급 포션", 1), ConsoleColor.DarkYellow, 'i', new Position(12, 4)));
             gameObjects.Add(new PickableEquipment(new Item("가죽 부츠", 1), ConsoleColor.Cyan, 'E', new Position(6, 1)));
+            gameObjects.Add(new MonsterTile(nFMonsterFactory.Create("고블린"), ConsoleColor.DarkRed, 'M', new Position(12, 1)));
         }
 
         public void PrintMap()
