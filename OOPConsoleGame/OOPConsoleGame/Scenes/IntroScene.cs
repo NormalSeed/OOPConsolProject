@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OOPConsoleGame.Scenes
+﻿namespace OOPConsoleGame.Scenes
 {
     public class IntroScene : BaseScene
     {
@@ -35,12 +29,12 @@ namespace OOPConsoleGame.Scenes
 
         public override void Update()
         {
-            
+
         }
 
         public override void Result()
         {
-            switch(input)
+            switch (input)
             {
                 case ConsoleKey.D1:
                     Game.ChangeScene("Town");

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OOPConsoleGame.Items;
+﻿using OOPConsoleGame.Items;
 
 namespace OOPConsoleGame.Scenes
 {
@@ -40,12 +35,12 @@ namespace OOPConsoleGame.Scenes
                     Util.PrintS("설명을 끝낸 당신은 카르타에게 장비를 부탁합니다.");
                     Util.PrintS("\"장비를 갖고 싶으면 돈을 내야지. 비싸지는 않게 해주마. [200G]\"");
                     Util.Wait();
-                    switch(input)
+                    switch (input)
                     {
                         case ConsoleKey.D1:
                             Game.ChangeScene("SmithTrade");
                             break;
-                    }    
+                    }
                     break;
                 case ConsoleKey.D2:
                     Util.PrintS("설명을 끝낸 당신은 대장간의 자신의 자리로 걸어갑니다.");

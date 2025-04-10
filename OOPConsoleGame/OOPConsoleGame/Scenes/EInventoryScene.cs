@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OOPConsoleGame.Items;
+﻿using OOPConsoleGame.Items;
 
 namespace OOPConsoleGame.Scenes
 {
@@ -54,8 +49,8 @@ namespace OOPConsoleGame.Scenes
                     break;
                 case ConsoleKey.D1:
                     if (Game.Player.eInventory.Count > 0)
-                    { 
-                        chosenItem = Game.equipableDic[Game.Player.eInventory[0 + (page - 1) * 5].Name]; 
+                    {
+                        chosenItem = Game.equipableDic[Game.Player.eInventory[0 + (page - 1) * 5].Name];
                     }
                     break;
                 case ConsoleKey.D2:
@@ -63,7 +58,7 @@ namespace OOPConsoleGame.Scenes
                     {
                         chosenItem = Game.equipableDic[Game.Player.eInventory[1 + (page - 1) * 5].Name];
                     }
-                        break;
+                    break;
                 case ConsoleKey.D3:
                     if (Game.Player.eInventory.Count > 2)
                     {

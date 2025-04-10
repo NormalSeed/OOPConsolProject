@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OOPConsoleGame.Items;
+﻿using OOPConsoleGame.Items;
 
 namespace OOPConsoleGame.Scenes
 {
@@ -42,11 +37,11 @@ namespace OOPConsoleGame.Scenes
 
         public override void Update()
         {
-            switch(input)
+            switch (input)
             {
                 case ConsoleKey.RightArrow:
                     if (Game.Player.inventory.Count > page * 5)
-                    { 
+                    {
                         page += 1;
                     }
                     break;
@@ -91,7 +86,7 @@ namespace OOPConsoleGame.Scenes
 
         public override void Result()
         {
-            switch(input)
+            switch (input)
             {
                 case ConsoleKey.Escape:
                     Game.PreviousScene();

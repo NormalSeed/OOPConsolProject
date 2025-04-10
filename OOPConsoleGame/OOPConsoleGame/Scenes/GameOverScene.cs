@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OOPConsoleGame.Scenes
+﻿namespace OOPConsoleGame.Scenes
 {
     public class GameOverScene : BaseScene
     {
         public override void Render()
         {
-            Console.WriteLine("▼▼▼▼▼▼ Game Over ▼▼▼▼▼▼");
+            Util.PrintS("▼▼▼▼▼▼ Game Over ▼▼▼▼▼▼");
         }
         public override void Update()
         {

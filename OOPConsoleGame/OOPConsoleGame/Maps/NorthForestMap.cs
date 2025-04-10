@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OOPConsoleGame.Items;
 using OOPConsoleGame.Objects;
-using OOPConsoleGame.Items;
 using OOPConsoleGame.Scenes;
 
 namespace OOPConsoleGame.Maps
@@ -95,7 +90,7 @@ namespace OOPConsoleGame.Maps
                     {
                         NorthForestScene.isInit = true;
                     }
-                        break;
+                    break;
                 }
             }
         }

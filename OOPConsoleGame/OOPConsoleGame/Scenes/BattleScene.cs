@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OOPConsoleGame.Scenes
+﻿namespace OOPConsoleGame.Scenes
 {
     public class BattleScene : BaseScene
     {
@@ -76,7 +69,7 @@ namespace OOPConsoleGame.Scenes
                             Util.Wait();
                         }
                     }
-                        break;
+                    break;
 
             }
         }

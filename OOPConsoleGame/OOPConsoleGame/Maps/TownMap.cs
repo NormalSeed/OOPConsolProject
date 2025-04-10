@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using OOPConsoleGame.Objects;
+﻿using OOPConsoleGame.Objects;
 using OOPConsoleGame.Scenes;
 
 namespace OOPConsoleGame.Maps
@@ -101,7 +95,7 @@ namespace OOPConsoleGame.Maps
                     {
                         TownScene.isInit = true;
                     }
-                        break;
+                    break;
                 }
             }
         }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OOPConsoleGame.Scenes
+﻿namespace OOPConsoleGame.Scenes
 {
     public class UnequipScene : BaseScene
     {
@@ -28,7 +22,7 @@ namespace OOPConsoleGame.Scenes
 
         public override void Result()
         {
-            switch(input)
+            switch (input)
             {
                 case ConsoleKey.D1:
                     Console.WriteLine("장비가 해제되었습니다.");

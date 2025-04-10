@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OOPConsoleGame.Items;
+﻿using OOPConsoleGame.Items;
 
 namespace OOPConsoleGame
 {
@@ -38,11 +33,11 @@ namespace OOPConsoleGame
         public void Move(ConsoleKey input)
         {
             Position targetPos = position;
-            switch(input)
+            switch (input)
             {
                 case ConsoleKey.W:
                     targetPos.y--;
-                        break;
+                    break;
                 case ConsoleKey.S:
                     targetPos.y++;
                     break;
@@ -73,7 +68,7 @@ namespace OOPConsoleGame
             Console.WriteLine("착용 장비");
             string[] slotType = { "Weapon", "Armor", "Boots" };
 
-            for ( int i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 if (equipments[slotType[i]] != null)
                 {

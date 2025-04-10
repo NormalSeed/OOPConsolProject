@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OOPConsoleGame.Scenes
+﻿namespace OOPConsoleGame.Scenes
 {
     public class ElderHouseScene : BaseScene
     {
@@ -22,12 +16,12 @@ namespace OOPConsoleGame.Scenes
 
         public override void Update()
         {
-            
+
         }
 
         public override void Result()
         {
-            switch(input)
+            switch (input)
             {
                 case ConsoleKey.D1:
                     Util.PrintS("\"그 문양의 진정한 의미를 알아내기 위해서는 오래된 고서가 필요하다네.\"");

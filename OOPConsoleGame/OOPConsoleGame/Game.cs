@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections.Generic;
+﻿using OOPConsoleGame.Items;
 using OOPConsoleGame.Scenes;
-using OOPConsoleGame.Items;
 
 namespace OOPConsoleGame
 {
@@ -91,7 +85,7 @@ namespace OOPConsoleGame
                 curScene.Render();
                 curScene.Input();
                 curScene.Update();
-                curScene.Result(); 
+                curScene.Result();
             }
         }
         public static void End()

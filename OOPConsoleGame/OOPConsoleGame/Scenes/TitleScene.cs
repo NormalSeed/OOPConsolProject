@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OOPConsoleGame.Scenes
+﻿namespace OOPConsoleGame.Scenes
 {
     public class TitleScene : BaseScene
     {
@@ -19,7 +13,7 @@ namespace OOPConsoleGame.Scenes
 
         public override void Update()
         {
-            
+
         }
 
         public override void Result()

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OOPConsoleGame.Items;
+﻿using OOPConsoleGame.Items;
 
 namespace OOPConsoleGame.Scenes
 {
@@ -43,7 +38,7 @@ namespace OOPConsoleGame.Scenes
                 case ConsoleKey.D2:
                     Game.ChangeScene("Smithery");
                     break;
-            }    
+            }
         }
     }
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OOPConsoleGame.Scenes
+﻿namespace OOPConsoleGame.Scenes
 {
     public class UseScene : BaseScene
     {
@@ -29,7 +23,7 @@ namespace OOPConsoleGame.Scenes
 
         public override void Result()
         {
-            switch(input)
+            switch (input)
             {
                 case ConsoleKey.D1:
                     Console.WriteLine("아이템을 사용하였습니다.");

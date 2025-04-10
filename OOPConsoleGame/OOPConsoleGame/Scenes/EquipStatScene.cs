@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OOPConsoleGame.Items;
+﻿using OOPConsoleGame.Items;
 
 namespace OOPConsoleGame.Scenes
 {
@@ -66,7 +61,7 @@ namespace OOPConsoleGame.Scenes
                         Console.WriteLine("빈 슬롯입니다.");
                         Util.Wait();
                     }
-                        break;
+                    break;
                 case ConsoleKey.D2:
                     if (Game.Player.equipments.ContainsKey("Armor"))
                     {
